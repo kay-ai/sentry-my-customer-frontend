@@ -28,142 +28,406 @@
                                         <small><em>Enter customer details to start search</em></small>
                                         <div class="container-fluid">
                                             <div class="row">
-                                        <div class="form-group col-lg-4 mt-4">
-                                            <div class="row">
-                                                <label class="form-control-label">Reference Number</label>
-                                                <div class="input-group input-group-merge">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">
-                                                            <i class="uil uil-file-search-alt"></i>
-                                                        </span>
+
+                                                <div class="form-group col-lg-6 mt-4">
+                                                    <label class="form-control-label">Customer Name</label>
+                                                    <div class="input-group input-group-merge">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="uil uil-atm-card"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="password" >
                                                     </div>
-                                                    <input type="text" class="form-control" id="password" >
+                                                </div>
+
+                                                <div class="form-group col-lg-6 mt-4">
+                                                    <label class="form-control-label">Phone Number</label>
+                                                    <div class="input-group input-group-merge">
+                                                        <div class="input-group-prepend">
+
+                                                        </div>
+                                                        <input type="tel" id="phone" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                   <button type="button" class="btn btn-primary">Search</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+
+
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="nav nav-pills navtab-bg nav-justified" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-activity-tab" data-toggle="pill"
+                                                href="#pills-activity" role="tab" aria-controls="pills-activity"
+                                                aria-selected="true">
+                                                Debtors
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-messages-tab" data-toggle="pill"
+                                                href="#pills-messages" role="tab" aria-controls="pills-messages"
+                                                aria-selected="false">
+                                                Creditors
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-projects-tab" data-toggle="pill"
+                                                href="#pills-projects" role="tab" aria-controls="pills-projects"
+                                                aria-selected="false">
+                                                All Customers
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-activity" role="tabpanel" aria-labelledby="pills-activity-tab">
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-6">
+                                                    <p class="sub-header float-left">
+                                                        List of Debtors
+                                                    </p>
+                                                    <p class="sub-header float-right">
+                                                       <span class="badge badge-pill badge-soft-dark">Customers Owe you: &#8358; 3500</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-5 col-sm-6">
+                                                    <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                                        <i class="fa fa-plus my-float"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table mb-0" id="basic-datatable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">ID</th>
+                                                            <th scope="col">Avatar</th>
+                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Tel</th>
+                                                            <th scope="col">Debt</th>
+                                                            <th scope="col">Balance</th>
+                                                            <th scope="col">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row">1</td>
+                                                            <td><img src="assets/images/users/avatar-1.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                            <td>John Doe <br>
+                                                                <span class="badge badge-success">Has debt</span>
+                                                            </td>
+                                                            <td>+234 90 000 000 00<br>
+                                                            </td>
+                                                            <td>
+                                                                <span> &#8358; 6 000</span> <br>
+                                                                <span class="badge badge-primary">Paid: 3 500</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-success">&#8358; 2 500</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group mt-2 mr-1">
+                                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                        <a class="dropdown-item" href="#">View Transaction</a>
+                                                                        <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="row">2</td>
+                                                            <td><img src="assets/images/users/avatar-6.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                            <td>Mary Doe <br>
+                                                                <span class="badge badge-success">Has Debt</span>
+                                                            </td>
+                                                            <td>+44 0000 123456 <br>
+                                                            </td>
+                                                            <td>
+                                                                <span> &#8358; 10 000</span> <br>
+                                                                <span class="badge badge-primary">Paid: 9 000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-success">&#8358; 1 000</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group mt-2 mr-1">
+                                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                        <a class="dropdown-item" href="#">View Transaction</a>
+                                                                        <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!-- messages -->
+                                        <div class="tab-pane" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-6">
+                                                    <p class="sub-header float-left">
+                                                        List of Creditors
+                                                    </p>
+                                                    <p class="sub-header float-right">
+                                                       <span class="badge badge-pill badge-soft-danger">You owe: &#8358; 3500</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-5 col-sm-6">
+                                                    <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                                        <i class="fa fa-plus my-float"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="">
+                                                    <table class="table mb-0" id="basic-datatable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">ID</th>
+                                                                <th scope="col">Avatar</th>
+                                                                <th scope="col">Name</th>
+                                                                <th scope="col">Tel</th>
+                                                                <th scope="col">Credit</th>
+                                                                <th scope="col">Balance</th>
+                                                                <th scope="col">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td scope="row">1</td>
+                                                                <td><img src="assets/images/users/avatar-5.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                                <td>Lynda Doe <br>
+                                                                    <span class="badge badge-danger">Has Credit</span>
+                                                                </td>
+                                                                <td>+234 90 000 000 00<br>
+                                                                </td>
+                                                                <td>
+                                                                    <span> &#8358; 1 500</span> <br>
+                                                                    <span class="badge badge-primary">You Paid: 1000</span>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="text-danger">&#8358; 500</span>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group mt-2 mr-1">
+                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                        </button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                            <a class="dropdown-item" href="#">View Transaction</a>
+                                                                            <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td scope="row">2</td>
+                                                                <td><img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                                <td>Henry Doe <br>
+                                                                    <span class="badge badge-danger">Has Credit</span>
+                                                                </td>
+                                                                <td>+44 0000 123456 <br>
+                                                                </td>
+                                                                <td>
+                                                                    <span> &#8358; 2 560</span> <br>
+                                                                    <span class="badge badge-primary">You Paid: 2 000</span>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="text-danger">&#8358; 560</span>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group mt-2 mr-1">
+                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                        </button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                            <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                            <a class="dropdown-item" href="#">Call</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
 
-                                            <div class="form-group col-lg-4 mt-4">
-                                                <label class="form-control-label">Customer Name</label>
-                                                <div class="input-group input-group-merge">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">
-                                                            <i class="uil uil-atm-card"></i>
-                                                        </span>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="password" >
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-lg-4 mt-4">
-                                                <label class="form-control-label">Phone Number</label>
-                                                <div class="input-group input-group-merge">
-                                                    <div class="input-group-prepend">
-
-                                                    </div>
-                                                    <input type="tel" id="phone" class="form-control">
-
-
-                                                </div>
-                                            </div>
-
-                                                <button type="button" class="btn btn-primary">Search</button>
-                                                </div>
-
-
-                                            </div>
-
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
-                        </div>
-
-
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        {{-- <h4 class="header-title mt-0 mb-1">Basic Data Table</h4> --}}
-                                            <p class="sub-header">
-                                                List of Registered Customers
+                                        <div class="tab-pane fade" id="pills-projects" role="tabpanel" aria-labelledby="pills-projects-tab">
+                                            <div class="col-md-12">
+                                                <p class="sub-header float-left">
+                                                    List of Regitered Customers
                                                 </p>
+                                                <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                                    <i class="fa fa-plus my-float"></i>
+                                                </a>
+                                            </div>
+
                                             <div class="table-responsive">
-                                                 <table class="table mb-0" id="basic-datatable">
-                                                <thead>
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Tel</th>
-                                                    <th scope="col">Debt</th>
-                                                    <th scope="col">Balance</th>
-                                                    <th scope="col">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td scope="row">1</td>
-                                                    <td>John Doe <br>
-                                                        <span class="badge badge-danger">Has debt</span>
-                                                    </td>
-                                                    <td>+234 90 000 000 00<br>
-                                                    </td>
-                                                    <td>
-                                                        <span> &#8358; 6 000</span> <br>
-                                                        <span class="badge badge-primary">Paid: 3 500</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-danger">&#8358; 2 500</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="btn-group mt-2 mr-1">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Actions<i class="icon"><span data-feather="chevron-down"></span></i>
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
-                                                                <a class="dropdown-item" href="#">Send Reminder</a>
-                                                                <a class="dropdown-item" href="#">Call</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                <table class="table mb-0" id="basic-datatable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">ID</th>
+                                                            <th scope="col">Avatar</th>
+                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Tel</th>
+                                                            <th scope="col">Amount Due</th>
+                                                            <th scope="col">Balance</th>
+                                                            <th scope="col">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row">1</td>
+                                                            <td><img src="assets/images/users/avatar-5.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                            <td>Lynda Doe <br>
+                                                                <span class="badge badge-danger">Has Credit</span>
+                                                            </td>
+                                                            <td>+234 90 000 000 00<br>
+                                                            </td>
+                                                            <td>
+                                                                <span> &#8358; 1 500</span> <br>
+                                                                <span class="badge badge-primary">You Paid: 1000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-danger">&#8358; 500</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group mt-2 mr-1">
+                                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                        <a class="dropdown-item" href="#">View Transaction</a>
+                                                                        <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
 
-                                                <tr>
-                                                    <td scope="row">1</td>
-                                                    <td>Mary Doe <br>
-                                                        <span class="badge badge-success">Debt Cleared</span>
-                                                    </td>
-                                                    <td>+44 0000 123456 <br>
-                                                    </td>
-                                                    <td>
-                                                        <span> &euro; 10 000</span> <br>
-                                                        <span class="badge badge-primary">Paid: 10 000</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-success">&euro; 0</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="btn-group mt-2 mr-1">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Actions<i class="icon"><span data-feather="chevron-down"></span></i>
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
-                                                                <a class="dropdown-item" href="#">Send Reminder</a>
-                                                                <a class="dropdown-item" href="#">Call</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                        <tr>
+                                                            <td scope="row">2</td>
+                                                            <td><img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                            <td>Henry Doe <br>
+                                                                <span class="badge badge-danger">Has Credit</span>
+                                                            </td>
+                                                            <td>+44 0000 123456 <br>
+                                                            </td>
+                                                            <td>
+                                                                <span> &#8358; 2 560</span> <br>
+                                                                <span class="badge badge-primary">You Paid: 2 000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-danger">&#8358; 560</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group mt-2 mr-1">
+                                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                        <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                        <a class="dropdown-item" href="#">Call</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
 
-                                            </tbody>
-                                        </table>
+                                                        <tr>
+                                                            <td scope="row">3</td>
+                                                            <td><img src="assets/images/users/avatar-1.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                            <td>John Doe <br>
+                                                                <span class="badge badge-success">Has debt</span>
+                                                            </td>
+                                                            <td>+234 90 000 000 00<br>
+                                                            </td>
+                                                            <td>
+                                                                <span> &#8358; 6 000</span> <br>
+                                                                <span class="badge badge-primary">Paid: 3 500</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-success">&#8358; 2 500</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group mt-2 mr-1">
+                                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                        <a class="dropdown-item" href="#">View Transaction</a>
+                                                                        <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="row">4</td>
+                                                            <td><img src="assets/images/users/avatar-6.jpg" class="avatar-sm rounded-circle" alt="Shreyu" /></td>
+                                                            <td>Mary Doe <br>
+                                                                <span class="badge badge-success">Has Debt</span>
+                                                            </td>
+                                                            <td>+44 0000 123456 <br>
+                                                            </td>
+                                                            <td>
+                                                                <span> &#8358; 10 000</span> <br>
+                                                                <span class="badge badge-primary">Paid: 9 000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-success">&#8358; 1 000</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group mt-2 mr-1">
+                                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="/backend/view-customer">View Profile</a>
+                                                                        <a class="dropdown-item" href="#">View Transaction</a>
+                                                                        <a class="dropdown-item" href="#">Send Reminder</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
-                        </div>
 
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
                     </div>
                 </div>
                                             <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
