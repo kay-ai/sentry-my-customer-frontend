@@ -129,7 +129,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td scope="row">1</td>
+                                                    <td scope="row">2</td>
                                                     <td>Mary Doe <br>
                                                         <span class="badge badge-success">Debt Cleared</span>
                                                     </td>
