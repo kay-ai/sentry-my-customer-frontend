@@ -51,6 +51,15 @@ Route::get('/backend/dashboard', function () {
     return view('backend.dashboard');
 });
 
+// Customers
+Route::get('/backend/customers', function () {
+    return view('backend.customers.index');
+});
+
+Route::get('/backend/view-customer', function () {
+    return view('backend.customers.show');
+});
+
 // transaction
 
 Route::get('/backend/transactions', function () {
