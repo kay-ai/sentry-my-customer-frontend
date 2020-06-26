@@ -12,7 +12,7 @@
                         <div class="row page-title">
                             <div class="col-md-12">
                                 <h4 class="mb-1 mt-0 float-left">My Customers</h4>
-                                <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#CustomerModal">
                                     New &nbsp;<i class="fa fa-plus my-float"></i>
                                 </a>
                             </div>
@@ -100,7 +100,7 @@
                                                     </p>
                                                 </div>
                                                 <div class="col-md-5 col-sm-6">
-                                                    <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                                    <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#DebtModal">
                                                         <i class="fa fa-plus my-float"></i>
                                                     </a>
                                                 </div>
@@ -194,7 +194,7 @@
                                                     </p>
                                                 </div>
                                                 <div class="col-md-5 col-sm-6">
-                                                    <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                                    <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#CreditModal">
                                                         <i class="fa fa-plus my-float"></i>
                                                     </a>
                                                 </div>
@@ -283,7 +283,7 @@
                                                 <p class="sub-header float-left">
                                                     List of Regitered Customers
                                                 </p>
-                                                <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                                                <a href="#" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#CustomerModal">
                                                     <i class="fa fa-plus my-float"></i>
                                                 </a>
                                             </div>
@@ -430,50 +430,140 @@
                         </div>
                     </div>
                 </div>
-                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
-                                        aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="myModalLabel">Create New User</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                      <form class="form-horizontal">
-                                            <div class="form-group row mb-3">
-                                                <label for="inputphone" class="col-3 col-form-label">Phone Number</label>
-                                                <div class="col-9">
-                                                    <input type="number" class="form-control" id="inputphone" placeholder="Phone Number">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row mb-3">
-                                                <label for="inputPassword3" class="col-3 col-form-label">Password</label>
-                                                <div class="col-9">
-                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row mb-3">
-                                                <label for="inputPassword5" class="col-3 col-form-label">Re Password</label>
-                                                <div class="col-9">
-                                                    <input type="password" class="form-control" id="inputPassword5" placeholder="Retype Password">
-                                                </div>
-                                            </div>
-                                            <div class="form-group mb-0 justify-content-end row">
-                                                <div class="col-9">
-                                                    <button type="submit" class="btn btn-primary btn-block ">Create User</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                                </div>
-                                                                                                <div class="modal-footer">
-                                                </div>
+                <div id="CustomerModal" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Add New Customer</h5>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    <form class="form-horizontal">
+                        <div class="form-group row mb-3">
+                            <label for="inputphone" class="col-3 col-form-label">Phone Number</label>
+                            <div class="col-9">
+                                <input type="number" class="form-control" id="inputphone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="inputPassword3" class="col-3 col-form-label">Password</label>
+                            <div class="col-9">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="inputPassword5" class="col-3 col-form-label">Re Password</label>
+                            <div class="col-9">
+                                <input type="password" class="form-control" id="inputPassword5" placeholder="Retype Password">
+                            </div>
+                        </div>
+                        <div class="form-group mb-0 justify-content-end row">
+                            <div class="col-9">
+                                <button type="submit" class="btn btn-primary btn-block ">Create User</button>
+                            </div>
+                        </div>
+                    </form>
+                            </div>
+                                                                            <div class="modal-footer">
+                            </div>
 
-                                            </div><!-- /.modal-content -->
-                                        </div><!-- /.modal-dialog -->
-                                    </div><!-- /.modal -->
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <div id="DebtModal" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Add New Debtor</h5>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    <form class="form-horizontal">
+                        <div class="form-group row mb-3">
+                            <label for="inputphone" class="col-3 col-form-label">Phone Number</label>
+                            <div class="col-9">
+                                <input type="number" class="form-control" id="inputphone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="inputPassword3" class="col-3 col-form-label">Password</label>
+                            <div class="col-9">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="inputPassword5" class="col-3 col-form-label">Re Password</label>
+                            <div class="col-9">
+                                <input type="password" class="form-control" id="inputPassword5" placeholder="Retype Password">
+                            </div>
+                        </div>
+                        <div class="form-group mb-0 justify-content-end row">
+                            <div class="col-9">
+                                <button type="submit" class="btn btn-primary btn-block ">Create User</button>
+                            </div>
+                        </div>
+                    </form>
+                            </div>
+                                                                            <div class="modal-footer">
+                            </div>
+
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <div id="CreditModal" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">Add New Creditor</h5>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    <form class="form-horizontal">
+                        <div class="form-group row mb-3">
+                            <label for="inputphone" class="col-3 col-form-label">Phone Number</label>
+                            <div class="col-9">
+                                <input type="number" class="form-control" id="inputphone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="inputPassword3" class="col-3 col-form-label">Password</label>
+                            <div class="col-9">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="inputPassword5" class="col-3 col-form-label">Re Password</label>
+                            <div class="col-9">
+                                <input type="password" class="form-control" id="inputPassword5" placeholder="Retype Password">
+                            </div>
+                        </div>
+                        <div class="form-group mb-0 justify-content-end row">
+                            <div class="col-9">
+                                <button type="submit" class="btn btn-primary btn-block ">Create User</button>
+                            </div>
+                        </div>
+                    </form>
+                            </div>
+                                                                            <div class="modal-footer">
+                            </div>
+
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
         @endsection
 
 

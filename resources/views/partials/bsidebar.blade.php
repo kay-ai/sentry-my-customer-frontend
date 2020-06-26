@@ -53,19 +53,19 @@
                         <span> Dashboard </span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="/backend/transactions">
-                        <i data-feather="credit-card"></i>
-                        <span> Transactions </span>
-                    </a>
-                </li>
                 <li>
                     <a href="/backend/customers">
                         <i class='uil uil-chat-bubble-user'></i>
                         <span> Customers </span>
                     </a>
                 </li>
+                <li>
+                    <a href="/backend/transactions">
+                        <i data-feather="credit-card"></i>
+                        <span> Transactions </span>
+                    </a>
+                </li>
+
                 <li>
                     <a href="{{route('analytics')}}">
                         <i data-feather="book-open"></i>
@@ -91,7 +91,12 @@
                         <span> Complaint Log </span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="/backend/settings">
+                        <i class="uil  uil-cog"></i>
+                        <span> Settings </span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="/backend/users">
@@ -99,12 +104,7 @@
                         <span> Users </span>
                     </a>
                 </li>
-                <li>
-                    <a href="/backend/settings">
-                        <i class="uil  uil-cog"></i>
-                        <span> Settings </span>
-                    </a>
-                </li>
+
 
             </ul>
         </div>
