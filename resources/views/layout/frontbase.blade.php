@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta content="MyCustomer - JusticeLeague" name="description" />
+    <meta content="JusticeLeague" name="author" />
     <title>MyCustomer</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/frontend/assets/img/favicon.png">
 
     <!-- CSS here -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="/frontend/assets/css/style.css">
     <link rel="stylesheet" href="/frontend/assets/css/header-footer.css">
@@ -56,6 +58,10 @@
     <!-- Custom js-->
     <script src="/frontend/assets/js/main.js"></script>
     <script src="/frontend/assets/js/header-footer.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
 
     @yield('javascript')

@@ -47,7 +47,7 @@ input,
     width: 100%;
     padding: 12px 5px;
     margin: 8px 0;
-    max-width: 370px;
+    /* max-width: 370px; */
     display: inline-block;
     border: none;
     outline: none;
@@ -61,7 +61,7 @@ input,
 
 .custom-select {
     position: relative;
-    border: none;
+    /* border: none; */
     padding: 0;
     margin-bottom: 5%;
 }
@@ -153,7 +153,7 @@ textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    max-width: 431px;
+    /* max-width: 431px; */
     display: inline-block;
     border: 0;
     outline: none;
@@ -216,32 +216,33 @@ input:focus,
     color: rgb(68, 66, 66);
 }
 .map-area {
-    max-width: 306px;
+    /* max-width: 306px; */
     margin-bottom: 10px;
 }
 .map-iframe {
-    max-width: 306px;
+    /* max-width: 306px; */
+    width: 100%;
 }
 
 /* Responsivenesss */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+/* @media (min-width: 768px) and (max-width: 1024px) {
     .map-iframe {
         max-width: 270px;
     }
-}
+} */
 @media (min-width: 375px) and (max-width: 480px) {
-    .map-iframe {
+    /* .map-iframe {
         max-width: 270px;
-    }
+    } */
     .contact-extra {
         margin-top: 10%;
     }
 }
 @media (max-width: 320px) {
-    .map-iframe {
+    /* .map-iframe {
         max-width: 230px;
-    }
+    } */
 
     .contact-extra {
         margin-top: 10%;

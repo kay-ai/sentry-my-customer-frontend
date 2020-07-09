@@ -1,0 +1,41 @@
+.container-fluid {
+    margin-top: -1em;
+    height: 95vh;
+    background-color: #fff;
+}
+
+#contain {
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* .lead {
+    color: #fff !important;
+} */
+
+h1, h4 {
+    color: #333bc0;
+}
+
+.text-center {
+    font-size: 1.2rem;
+}
+
+.mg {
+    margin: 0px 50px;
+}
+
+
+@media only screen and (max-width: 576px) {
+    p.text-center {
+        font-size: .8rem;
+    }
+
+    .mgr-5 {
+        margin-right: 2em !important;
+    }
+
+    .mgl-5 {
+        margin-left: 2em !important;
+    }
+}

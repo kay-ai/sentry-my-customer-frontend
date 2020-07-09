@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use GuzzleHttp\Client;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+use GuzzleHttp\Exception\RequestException;
 
 // use Illuminate\Support\Facades\Http;
 
@@ -42,12 +43,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->host = env('API_URL', 'https://api.customerpay.me/');
+        $this->host = env('API_URL', 'https://dev.api.customerpay.me');
     }
 
     public function index()
     {
-        if (Cookie::get('api_token')){
+        if (Cookie::get('api_token')) {
             return redirect()->route('dashboard');
         }
         return view('backend.login');
@@ -55,19 +56,13 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        $validation = Validator::make(request()->all(),[
-            'phone_number' => 'required|numeric|digits_between:1,16',
-            'password' => 'required|regex:/[a-zA-Z0-9]{6,20}$/'
+        $request->validate([
+            'phone_number' => 'required|min:6|max:16',
+            'password' => 'required|min:6'
         ]);
 
-        if ($validation->fails()) {
-            $request->session()->flash('message', 'Invalid Phone number or password');
-            $request->session()->flash('alert-class', 'alert-danger');
-            return redirect()->route('login');
-        }
-
         try {
-            $client =  new \GuzzleHttp\Client();
+            $client = new Client();
             $response = $client->post($this->host . '/login/user', [
                 'form_params' => [
                     'phone_number' => $request->input('phone_number'),
@@ -76,47 +71,60 @@ class LoginController extends Controller
             ]);
 
             if ($response->getStatusCode() == 200) {
+
                 $response = json_decode($response->getBody());
 
-                if (isset($response->Status) || (isset($response->Status) && !$response->status)) {
-                    $request->session()->flash('message', $response->Message);
-                    $request->session()->flash('alert-class', 'alert-danger');
+                if (isset($response->success) && $response->success) {
+
+                    $data = $response->data->user->local;
+
+                    // store data to cookie
+                    Cookie::queue('api_token', $response->data->user->api_token);
+                    Cookie::queue('user_role', $response->data->user->local->user_role);
+                    Cookie::queue('first_name', $response->data->user->local->first_name);
+                    Cookie::queue('email', $response->data->user->local->email);
+                    Cookie::queue('last_name', $response->data->user->local->last_name);
+                    Cookie::queue('is_active', $data->is_active);
+                    Cookie::queue('phone_number', $data->phone_number);
+                    Cookie::queue('user_id', $response->data->user->_id);
+                    Cookie::queue('expires', strtotime('+ 1 day'));
+
+                    //show success message
+                    $request->session()->flash('alert-class', 'alert-success');
+                    $request->session()->flash('message', $response->message);
+
+                    //check if active
+                    if ($data->is_active == false) {
+                        return redirect()->route('activate.user');
+                    }
+                    return redirect()->route('dashboard');
+                } else {
+                    $message = isset($response->Message) ? $response->Message : $response->message;
+                    $request->session()->flash('message', $message);
                     return redirect()->route('login');
                 }
-
-                // store data to cookie
-                Cookie::queue('api_token', $response->api_token);
-                Cookie::queue('is_active', $response->user->is_active);
-                Cookie::queue('phone_number', $response->user->phone_number);
-                Cookie::queue('user_id', $response->user->_id);
-
-                //check if active
-                if ($response->user->is_active == false) {
-                    return redirect()->route('activate.user');
-                }
-
-                // store other data to cookie
-                Cookie::queue('first_name', $response->user->first_name);
-                Cookie::queue('last_name', $response->user->last_name);
-                Cookie::queue('email', $response->user->email);
-
-                return redirect()->route('dashboard');
             }
 
-            if ($response->getStatusCode() == 500) {
-                return view('errors.500');
-            }
-        } catch (\Exception $e) {
-            // log $e->getMessage() when error loggin is setup
-            if($e->getCode() == 400) {
-                $request->session()->flash('message', 'Invalid Phone number or password');
+            $message = isset($response->Message) ? $response->Message : $response->message;
+            $request->session()->flash('message', $message);
+            return redirect()->route('login');
+        } catch (RequestException $e) {
+            //log error;
+            Log::error('Catch error: LoginController - ' . $e->getMessage());
+
+            if ($e->hasResponse()) {
+                // get response to catch 4xx errors
+                $response = json_decode($e->getResponse()->getBody());
                 $request->session()->flash('alert-class', 'alert-danger');
+                $request->session()->flash('message', $response->error->description);
                 return redirect()->route('login');
             }
-
-            Log::error("catch error: LoginController - ".$e->getMessage());
-            $request->session()->flash('message', 'something went wrong try again in a few minutes');
-            return redirect()->route('login');
+            // check for 500 server error
+            return view('errors.500');
+        } catch (\Exception $e) {
+            //log error;
+            Log::error('Catch error: LoginController - ' . $e->getMessage());
+            return view('errors.500');
         }
         return redirect()->route('login');
     }

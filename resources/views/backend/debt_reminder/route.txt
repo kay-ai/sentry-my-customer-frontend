@@ -1,3 +1,0 @@
-Route::get('/backend/debt_reminders', function () {
-    return view('backend.debt_reminder.index');
-});

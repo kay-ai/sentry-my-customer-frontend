@@ -1,3 +1,0 @@
-Route::get('/backend/broadcastmessage', function () {
-    return view('backend.broadcastmessage.broadcastmessage');
-});

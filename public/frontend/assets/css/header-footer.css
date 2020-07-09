@@ -178,18 +178,64 @@ nav {
 .hamburger-container {
   display: none;
 }
+/*MOBILE CSS */
+
 
 .mobile-menu {
   display: none;
+  background-color: #fff;
+  /* background-image: linear-gradient(120deg, #f8e093 0%, #fda085 100%);} */
 }
+.mobile__menu__list > li{
+  margin-left: -40vw;
+  margin-top: -2vh;
+}
+.mobile__menu__list__item{
+  padding-top: 3vh;
+}
+.mobile__menu__list_link_diff{
+  margin-left: 10vw;
+}
+.mobile__menu__list_link_diff1{
+  margin-left: -2vw;
+}
+a.mobile__menu__list__link  {
+  color: black !important;
+}
+hr.hr-mobile {
+  height: 2px;
+  width: 400px;
+  background-color: black;
+  overflow: hidden;
 
+}
+.close-mobile-menu i {
+  color: #333CC1;
+}
+h1.mobile__nav__h1{
+  margin-left: 10vw;
+}
+a.mobile__menu__list__link > img{
+  width: 20px; 
+}
+.h1-group-vertical{
+  margin-left: 20px;
+}
+a.mobile__nav__h1__link{
+  font-size: 20px;
+  color: black !important;
+
+}
+a.mobile__nav__h1__link > img{
+  width:20px;
+}
 
 /* FOOTER CSS */
 
 footer {
   height: auto;
   background-color: var(--primary-dark);
-  padding: 15% 0;
+  padding: 2% 0;
 }
 
 .footer_left {
@@ -334,6 +380,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .mobile__menu__list {
@@ -393,7 +440,6 @@ footer {
   .mobile__nav__button__link:focus {
     outline: none;
   }
-  
 }
 
 @media (max-width: 574px) {
@@ -466,5 +512,184 @@ footer {
   .nav {
     padding-right: 0;
   }
+
+}
+/* media query for mobile view*/
+  /*MOBILE CSS */
+
+
+   @media (max-width: 360px) and (min-width: 321px){
+  .mobile__nav__menu > img{
+    margin-left: 10vw;
+  }
+  .mobile__menu__list{
+    margin-top: 15vh;
+    margin-left: -10vw;
+
+  }
+  .mobile__menu__list> li{
+    margin-left: -25vw;
+  }
+  .mobile__menu__container{
+    margin-top: -100px;
+
+  }
+  .mobile__menu__list__item{
+    padding-top: 3vh;
+  }
+  .mobile__menu__list_link_diff1{
+    margin-left: -5vw;
+  }
+  a.mobile__menu__list__link  {
+    color: black !important;
+  }
+  hr.hr-mobile {
+    height: 2px;
+    width: 400px;
+    background-color: black;
+    overflow: hidden;
+    margin-top: -20px;
+
+  }
+  .close-mobile-menu i {
+    color: #333CC1;
+  }
+  h1.mobile__nav__h1{
+    margin-left: 10vw;
+  }
+  a.mobile__menu__list__link > img{
+    width: 20px; 
+  }
+  .h1-group-vertical{
+    margin-left: -5px;
+  }
+  a.mobile__nav__h1__link{
+    font-size: 20px;
+    color: black !important;
+    margin-left: 20vw;
+
+  }
+  a.mobile__nav__h1__link > img{
+    width:20px;
+  }
+
+
+    }
+/*iphone 320px*/
+@media (max-width: 320px){
+  /*MOBILE CSS */
+.mobile__nav__menu > img{
+  margin-left: 10vw;
+}
+.mobile__menu__list{
+  margin-top: 15vh;
+  margin-left: -10vw;
+
+}
+.mobile__menu__list> li{
+  margin-left: -25vw;
+}
+.mobile__menu__container{
+  margin-top: -100px;
+
+}
+.mobile__menu__list__item{
+  padding-top: 3vh;
+}
+.mobile__menu__list_link_diff1{
+  margin-left: -5vw;
+}
+a.mobile__menu__list__link  {
+  color: black !important;
+}
+hr.hr-mobile {
+  height: 2px;
+  width: 400px;
+  background-color: black;
+  overflow: hidden;
+  margin-top: -20px;
+
+}
+.close-mobile-menu i {
+  color: #333CC1;
+}
+h1.mobile__nav__h1{
+  margin-left: 10vw;
+}
+a.mobile__menu__list__link > img{
+  width: 20px; 
+}
+.h1-group-vertical{
+  margin-left: -5px;
+}
+a.mobile__nav__h1__link{
+  font-size: 20px;
+  color: black !important;
+  margin-left: 25vw;
+
+}
+a.mobile__nav__h1__link > img{
+  width:20px;
+}
+
+
+}
+/*iPhone  6,7,8*/
+@media (max-width: 375px) and (min-width: 321px){
+  /*MOBILE CSS */
+.mobile__nav__menu > img{
+  margin-left: 10vw;
+}
+.mobile__menu__list{
+  margin-top: 15vh;
+  margin-left: -10vw;
+
+}
+.mobile__menu__list> li{
+  margin-left: -25vw;
+}
+.mobile__menu__container{
+  margin-top: -100px;
+
+}
+.mobile__menu__list__item{
+  padding-top: 3vh;
+}
+.mobile__menu__list_link_diff1{
+  margin-left: -5vw;
+}
+a.mobile__menu__list__link  {
+  color: black !important;
+}
+hr.hr-mobile {
+  height: 2px;
+  width: 400px;
+  background-color: black;
+  overflow: hidden;
+  margin-top: -20px;
+
+}
+.close-mobile-menu i {
+  color: #333CC1;
+}
+h1.mobile__nav__h1{
+  margin-left: 10vw;
+}
+a.mobile__menu__list__link > img{
+  width: 20px; 
+}
+.h1-group-vertical{
+  margin-left: -5px;
+}
+a.mobile__nav__h1__link{
+  font-size: 20px;
+  color: black !important;
+  margin-left: 19vw;
+
+}
+a.mobile__nav__h1__link > img{
+  width:20px;
+}
+
 
 }

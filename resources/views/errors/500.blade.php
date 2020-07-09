@@ -7,7 +7,7 @@
                     <div class="text-center">
 
                         <div>
-                            <img src="assets/images/server-down.png" alt="" class="img-fluid">
+                            <img src="/backend/assets/images/server-down.png" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -19,7 +19,7 @@
                     <h3 class="mt-3">Opps, something went wrong</h3>
                     <p class="text-muted mb-5">Server Error 500. We apoligise and are fixing the problem.<br> Please try again at a later stage.</p>
 
-                    <a href="/" class="btn btn-lg btn-primary mt-4">Take me back to Home</a>
+                    <a href="{{Cookie::get('api_token')? route('dashboard'): '/'}}" class="btn btn-lg btn-primary mt-4">Take me back to Home</a>
                 </div>
             </div>
         </div>

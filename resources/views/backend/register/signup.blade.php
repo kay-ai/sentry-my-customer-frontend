@@ -23,34 +23,47 @@
                                                 <img src="{{ ('/frontend/assets/images/fulllogo.png') }}" alt=""
                                                     height="auto" /> </a>
                                         </div>
+                                        <h3 class="h3 mb-0 mt-4 text-center">Register</h3>
+                                        <br><br>
+                                        @if(Session::has('message'))
+                                            <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>
+                                        @endif
 
-                                        <h6 class="h5 mb-0 mt-4 text-center">Register</h6>
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
 
                                         <form action="{{route('register')}}" class="authentication-form" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                <label class="form-control-label">First Name</label>
+                                                {{-- <label class="form-control-label">First Name</label>
                                                 <div class="input-group input-group-merge">
-                                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
+                                                    <input type="text" id="first_name" name="first_name" class="form-control" >
                                                 </div>
                                                 <label class="form-control-label">Last Name</label>
                                                 <div class="input-group input-group-merge">
-                                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
+                                                    <input type="text" id="last_name" name="last_name" class="form-control" >
                                                 </div>
                                                 <label class="form-control-label">Email</label>
                                                 <div class="input-group input-group-merge">
-                                                    <input type="email" id="email" name="email" class="form-control" required>
-                                                </div>
-                                                <label class="form-control-label">Password</label>
-                                                <div class="input-group input-group-merge">
-                                                    <input type="password" id="password" name="password" class="form-control" required>
-                                                </div>
-                                                <label class="form-control-label">Phone Number</label>
+                                                    <input type="email" id="email" name="email" class="form-control" >
+                                                </div> --}}
+                                                <label class="form-control-label mt-0 mb-2">Phone Number</label>
                                                 <div class="input-group input-group-merge">
                                                     <div class="input-group-prepend">
 
                                                     </div>
                                                     <input type="tel" id="phone" name="phone_number" class="form-control" required>
+                                                </div>
+                                                <label class="form-control-label mt-2 mb-2">Password</label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="password" id="password" name="password" class="form-control" required>
                                                 </div>
                                             </div>
 

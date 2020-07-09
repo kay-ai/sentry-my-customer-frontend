@@ -11,42 +11,58 @@
                 <div class="row page-title">
                     <div class="col-md-12">
                         <nav aria-label="breadcrumb" class="float-right mt-1">
-                            <a href="/admin/view_store" class="btn btn-primary">Go Back</a>
+                            <a href="/admin/store" class="btn btn-primary">Go Back</a>
                         </nav>
                         <h4 class="mt-2">Edit My Store</h4>
                     </div>
                 </div>
 
+                @if(session('message'))
+                <p class="alert alert-success">{{ session('message') }}</p>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <div class="row">
-                     <div class="col-lg-10">
+                     <div class="col-lg-12">
                          <div class="card">
                             <div class="card-body">
-                                    <form>
+                                    <form action="{{ route('store.update', $response->_id) }}" method="POST">
+                                      @csrf
+                                      @method('PUT')
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="store name">Store Name</label>
-                                            <input type="text" class="form-control"  placeholder="XYZ Stores">
+                                            <input type="text" name="store_name" class="form-control" value="{{ $response->store_name }}"  placeholder="XYZ Stores">
                                           </div>
                                           <div class="form-group col-md-6">
                                             <label for="inputTagline">Tagline</label>
-                                            <input type="text" class="form-control" id="inputTagline" placeholder="Your Perfect Stay One Click away....">
+                                            <input type="text" name="tag_line" class="form-control" id="inputTagline" placeholder="Your Perfect Stay One Click away....">
                                           </div>
                                         </div>
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="inputPhoneNumber">Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="+1(234) 567-8907">
+                                            <input type="text" name="phone_number" class="form-control" placeholder="+2348173644654">
                                           </div>
                                         <div class="form-group col-md-6" >
                                             <label for="inputEmailAddress"> Email Address (optional) </label>
-                                            <input type="email" class="form-control" placeholder="you@example.com">
+                                            <input type="email" name="email" class="form-control" placeholder="you@example.com">
                                         </div>
                                         </div>
                                         <div class="form-group">
                                           <label for="inputAddress">Address</label>
-                                          <input type="text" class="form-control"  placeholder="123 Abby Avenue">
+                                          <input type="text" name="shop_address" class="form-control" value="{{ $response->shop_address }}"  placeholder="123 Abby Avenue">
                                         </div>
-                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                                        <button type="submit" class="btn btn-success">
                                             Update Changes
                                         </button>
                                     </form>
@@ -54,28 +70,13 @@
                              </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  Do you want to save these changes to your store profile?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success"><a href="/admin/view_store" class="text-white">Save changes</a></button>
-                </div>
+        
               </div>
             </div>
           </div>
@@ -88,5 +89,5 @@
    window.intlTelInput(input, {
        // any initialisation options go here
    });
-   </script>    
+   </script>
 @stop

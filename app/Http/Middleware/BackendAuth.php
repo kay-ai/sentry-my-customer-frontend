@@ -15,15 +15,20 @@ class BackendAuth
      */
     public function handle($request, Closure $next)
     {
-        if ($request->cookie('api_token')) {
+
+        $expires = $request->cookie('expires');
+        $expires = intval($expires);
+
+        if ($request->cookie('api_token') && $expires > time()) {
+
 
             // Uncomment below when sms verification is working
-            // if (!$request->cookie('is_active') && $request->path() != 'backend/activate') {
+            // if (!$request->cookie('is_active') && $request->path() != 'admin/activate') {
             //     return redirect()->route('activate.user');
             // }
 
             return $next($request);
         }
-        return redirect()->route('login')->with('message', 'Permission Denied!!! You need to login first.');
+        return redirect()->route('logout')->with('message', 'Permission Denied!!! You need to login first.');
     }
 }

@@ -7,7 +7,7 @@
                     <div class="text-center">
 
                         <div>
-                            <img src="assets/images/not-found.png" alt="" class="img-fluid">
+                            <img src="/backend/assets/images/not-found.png" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -20,7 +20,7 @@
                     <p class="text-muted mb-5">This page was not found. <br> You may have mistyped the address or the
                         page may have moved.</p>
 
-                    <a href="/" class="btn btn-lg btn-primary mt-4">Take me back to Home</a>
+                    <a href="{{Cookie::get('api_token') ? route('dashboard') : '/'}}" class="btn btn-lg btn-primary mt-4">Take me back to Home</a>
                 </div>
             </div>
         </div>

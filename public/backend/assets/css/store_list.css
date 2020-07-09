@@ -31,3 +31,13 @@
 .float:hover {
   background: #fff;
 }
+
+.card {
+  height: 100%;
+}
+
+.padup {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100%;
+}

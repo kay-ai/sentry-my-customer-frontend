@@ -3,8 +3,6 @@
 <link href="/frontend/assets/css/about.css" rel="stylesheet" type="text/css" />
 @stop
 
-
-
 @section('content')
 
 <section id="main ">
@@ -113,50 +111,6 @@
                     </div>
                 </div>
 
-                <!-- Single Feature area -->
-                <!-- <div class="col-md-6 col-lg-4">
-                    <div class="single-feature-area text-center wow fadeInUp" data-wow-delay="0.4s">
-                        <!-- Feature Icon
-                        <div class="feature-icon">
-                            <img src="assets/img/icon-img/6.svg" alt="">
-                        </div>
-                        <!-- Single Feature Text
-                        <div class="feature-content-text">
-                            <h4>Drag &amp; Drop Building</h4>
-                            <p class="mb-0">Add, delete and move elements around on the front end of your website.</p>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Single Feature area -->
-                <!-- <div class="col-md-6 col-lg-4">
-                    <div class="single-feature-area text-center wow fadeInUp" data-wow-delay="0.8s">
-                        <!-- Feature Icon
-                        <div class="feature-icon">
-                            <img src="assets/img/icon-img/7.svg" alt="">
-                        </div>
-                        <!-- Single Feature Text
-                        <div class="feature-content-text">
-                            <h4>Drag &amp; Drop Building</h4>
-                            <p class="mb-0">Add, delete and move elements around on the front end of your website.</p>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Single Feature area -->
-                <!-- <div class="col-md-6 col-lg-4">
-                    <div class="single-feature-area text-center wow fadeInUp" data-wow-delay="0.8s">
-                        <!-- Feature Icon
-                        <div class="feature-icon">
-                            <img src="assets/img/icon-img/8.svg" alt="">
-                        </div>
-                        <!-- Single Feature Text
-                        <div class="feature-content-text">
-                            <h4>Drag &amp; Drop Building</h4>
-                            <p class="mb-0">Add, delete and move elements around on the front end of your website.</p>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

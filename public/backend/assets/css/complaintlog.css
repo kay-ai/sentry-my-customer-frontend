@@ -1,3 +1,7 @@
+.content-page {
+  background-color: rgb(247, 247, 247);
+}
+
 .complaintlog-table {
     font-family: 'Inter', sans-serif;
     margin-top: 1rem;
@@ -5,8 +9,9 @@
 
 .complaintlog-table th,
 .complaintlog-table td {
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: .5rem;
+    font-size: 0.80rem;
 }
 
 .complaintlog-table thead th {
@@ -16,6 +21,6 @@
 @media screen and (max-width: 767px) {
     .complaintlog-table th,
     .complaintlog-table td {
-        font-size: .75rem;
+        font-size: 0.70rem;
     }
 }

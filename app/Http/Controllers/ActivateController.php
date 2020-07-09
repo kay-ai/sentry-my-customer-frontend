@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Http\Request;
 
 class ActivateController extends Controller
 {
-    //
-
-    public function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
     {
-        if (Cookie::get('is_active') == true) {
-            return redirect()->route('dashboard');
-        }
-
-        $api_token = Cookie::get('api_token');
-        $phone_number = Cookie::get('phone_number');
-        return view("backend.activate.activate")->withApiToken($api_token)->withPhoneNumber($phone_number);
+        return view('backend.user.activate')->with([
+                'apiToken' => Cookie::get('api_token'),
+                'phoneNumber' => Cookie::get('phone_number')
+           ]);
     }
+
 }

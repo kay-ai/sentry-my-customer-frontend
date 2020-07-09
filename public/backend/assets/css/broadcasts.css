@@ -131,16 +131,16 @@ input{
 
 
 .contacts {
-    width: 100%;
-    margin: 3% 0;
-    background-color: #ffffff;
-    height: 50%;
+  width: 100%;
+  margin: 3% 0;
+  background-color: #ffffff;
 }
 
 
 
 /* start of buttons */
 .button-container {
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,16 +149,20 @@ input{
 .buttons{
     width: 40%;
     height: 50px;
+    line-height: 50px;
     border: none;
     border: 1px solid #FF8C5F;
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
     border-radius: 5px;
     background-color: #FF8C5F;
     color: #ffffff;
 }
 
 .buttons:hover{
+    text-decoration: none;
+    color: white;
     background-color: #be4d20; 
 }
 
@@ -170,6 +174,7 @@ input{
 
 .inverted:hover{
     border: none;
+    color:#FF8C5F;;
     background: transparent;
 }
 /* start of buttons */
@@ -177,6 +182,7 @@ input{
 
 
 /* start of media queries */
+
 @media screen and (max-width: 767px) {
     .heading-container{
         margin: 0;
@@ -202,29 +208,35 @@ input{
     .message-card-text > p {
         font-size: 0.7rem;
     }
-
+    
     .search{
         margin-bottom: 6%;
     }
-
+    
     h4{
         font-size: 0.9rem;
     }
-
+    
     .text2{
         margin-top: 0;
     }
-
+    
     form {
         margin: 1% auto;
     }
-
+    
     .button-container {
-        margin: 5%;
+        margin: 15% 5% 5% 5%;
     }
-
+    
     .search, .buttons {
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 880){
+    .button-container{
+        margin-top: 15%;
     }
 }
 
@@ -234,3 +246,8 @@ input{
     }
 }
 /* end of media queries */
+
+.indexing {
+  display: flex;
+  justify-content: center;
+}

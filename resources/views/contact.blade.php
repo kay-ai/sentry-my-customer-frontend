@@ -5,7 +5,6 @@
 @stop
 
 
-
 @section('content')
 
 <section id="main">
@@ -23,13 +22,13 @@
                         <p class="about-heading-caption">We help small businesses collect money and automatically send
                             them reminders when it's time to pay.</p>
                     </div>
-                    <div class="p-b-40 text-center">
+                    {{-- <div class="p-b-40 text-center">
                         <a class="welcome-btn play-store-btn mr-2 mb-2" href="#"><img
                                 src="/frontend/assets/img/bg-img/bt-1.png" alt=""></a>
 
                         <a class="welcome-btn app-store-btn mr-2 mb-2" href="#"><img
                                 src="/frontend/assets/img/bg-img/bt-2.png" alt=""></a>
-                    </div>
+                    </div> --}}
                 </div>
             </section>
         </div>

@@ -1,0 +1,7 @@
+Route::get('/backend/complaintform', function () {
+    return view('backend.complaintform.complaintform');
+});
+
+Route::get('/backend/complaintlog', function () {
+    return view('backend.complaintlog.complaintlog');
+});

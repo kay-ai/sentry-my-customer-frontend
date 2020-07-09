@@ -1,3 +1,0 @@
-Route::get('/backend/complaintform', function () {
-    return view('backend.complaintform.complaintform');
-});

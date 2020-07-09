@@ -327,6 +327,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .testimonial-img {
   width: 80px !important;
+  height: auto;
   border-radius: 50%;
 }
+
 
